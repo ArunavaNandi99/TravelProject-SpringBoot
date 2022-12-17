@@ -50,12 +50,6 @@ public class UserController {
         } catch (Exception e) {
             throw new Exception("Credentials Invalid");
         }
-        return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+        return new ResponseEntity<>("login Successfully", HttpStatus.OK);
     }
-
-    @GetMapping("/profile")
-    public String profile() {
-        return "profilePage";
-    }
-
 }
