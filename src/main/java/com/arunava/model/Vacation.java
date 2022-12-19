@@ -39,7 +39,5 @@ public class Vacation {
 
     private String image;
 
-
-
 }
 

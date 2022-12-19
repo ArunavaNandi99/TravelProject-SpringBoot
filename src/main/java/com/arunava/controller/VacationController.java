@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class VacationController {
@@ -36,17 +37,18 @@ public class VacationController {
         return  vacationService.getVacationById(id);
 
     }
+    @PutMapping("vacation/{id}")
+    public ResponseEntity<?> updateVacation(@PathVariable Long id, @RequestBody Vacation vacation){
+        return  vacationService.updateVacation(id, vacation);
+    }
+
+    @PatchMapping("vacation/{id}")
+    public ResponseEntity<?> updateVacationField(@PathVariable Long id,@RequestBody Map<String,Object> fields){
+        return  vacationService.updateVacationField(id,fields);
+    }
 
     @DeleteMapping("/vacation/{id}")
     public ResponseEntity<?> deleteVacationById(@PathVariable Long id){
-//        Vacation vacation = vacationRepository.findById(id).get();
-//
-//        if(vacation == null) {
-//            throw new UserNotFoundException("id : "+id);
-//        }
-//        vacationRepository.deleteById(id);
-//        return new ResponseEntity<>("delete successfully",HttpStatus.OK);
-
         return  vacationService.deleteVacationById(id);
 
     }
