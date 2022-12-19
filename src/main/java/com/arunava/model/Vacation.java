@@ -3,6 +3,7 @@ package com.arunava.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -15,24 +16,24 @@ public class Vacation {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long Id;
 
-    @NotNull(message = "please enter hotel name")
+    @NotBlank(message = "please enter hotel name")
     private String hotelName;
 
-    @NotNull(message = "please enter description")
+    @NotBlank(message = "please enter description")
     @Size(min = 10 ,max = 50, message ="Description  should be atLeast 10 characters max 50" )
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @NotNull(message = "please set valid type 'resort','cruise','hotel'")
+    @NotBlank(message = "please set valid type 'resort','cruise','hotel'")
     private Type type;
 
-    @NotNull(message = "please set city")
+    @NotBlank(message = "please set city")
     private String city;
 
-    @NotNull(message = "please set price")
+    @NotBlank(message = "please set price")
     private Number price;
 
-    @NotNull(message = "select valid date")
+    @NotBlank(message = "select valid date")
     private Date validTill;
 
     private boolean soldOut;

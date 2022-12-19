@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +24,7 @@ public class VacationController {
     private VacationService vacationService;
 
     @PostMapping("/vacation")
-    public ResponseEntity<?> saveVacation(@RequestBody Vacation vacation){
+    public ResponseEntity<?> saveVacation(@Valid @RequestBody Vacation vacation){
         return  vacationService.saveVacation(vacation);
     }
 
@@ -34,17 +35,17 @@ public class VacationController {
 
     @GetMapping("/vacation/{id}")
     public ResponseEntity<?> getVacationById(@PathVariable Long id){
-        return  vacationService.getVacationById(id);
+        return vacationService.getVacationById(id);
 
     }
     @PutMapping("vacation/{id}")
-    public ResponseEntity<?> updateVacation(@PathVariable Long id, @RequestBody Vacation vacation){
-        return  vacationService.updateVacation(id, vacation);
+    public ResponseEntity<?> updateVacation(@Valid @PathVariable Long id, @RequestBody Vacation vacation){
+        return vacationService.updateVacation(id, vacation);
     }
 
     @PatchMapping("vacation/{id}")
-    public ResponseEntity<?> updateVacationField(@PathVariable Long id,@RequestBody Map<String,Object> fields){
-        return  vacationService.updateVacationField(id,fields);
+    public ResponseEntity<?> updateVacationField(@Valid @PathVariable Long id,@RequestBody Map<String,Object> fields){
+        return vacationService.updateVacationField(id,fields);
     }
 
     @DeleteMapping("/vacation/{id}")
