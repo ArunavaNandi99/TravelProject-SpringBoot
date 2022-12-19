@@ -11,25 +11,26 @@ import org.springframework.stereotype.Service;
 import java.util.NoSuchElementException;
 
 @Service
-public class VacationServiceImpl  implements  VacationService{
+public class VacationServiceImpl implements VacationService {
 
     @Autowired
     private VacationRepository vacationRepo;
+
     @Override
     public ResponseEntity<?> saveVacation(Vacation vacation) {
-        return new  ResponseEntity<> (vacationRepo.save(vacation), HttpStatus.CREATED);
+        return new ResponseEntity<>(vacationRepo.save(vacation), HttpStatus.CREATED);
     }
 
     @Override
     public ResponseEntity<?> getVacation() {
-        return new ResponseEntity<>(vacationRepo.findAll(),HttpStatus.OK);
+        return new ResponseEntity<>(vacationRepo.findAll(), HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<?> getVacationById(Long id) {
         Vacation vacation = vacationRepo.findById(id).get();
 
-        return new ResponseEntity<>(vacation ,HttpStatus.OK);
+        return new ResponseEntity<>(vacation, HttpStatus.OK);
     }
 
     @Override
@@ -37,6 +38,6 @@ public class VacationServiceImpl  implements  VacationService{
         Vacation vacation = vacationRepo.findById(id).get();
         vacationRepo.deleteById(id);
 
-        return  new ResponseEntity<>("delete Successfully",HttpStatus.OK);
+        return new ResponseEntity<>("delete Successfully", HttpStatus.OK);
     }
 }
