@@ -1,17 +1,15 @@
 package com.arunava.controller;
 
-import com.arunava.exception.UserNotFoundException;
+
 import com.arunava.model.Vacation;
 import com.arunava.repository.VacationRepository;
 import com.arunava.service.VacationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpStatus;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 import java.util.Map;
 
 @RestController

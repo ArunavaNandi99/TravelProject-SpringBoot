@@ -11,8 +11,6 @@ import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Field;
 import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 
 @Service
 public class VacationServiceImpl implements VacationService {
@@ -40,8 +38,9 @@ public class VacationServiceImpl implements VacationService {
     @Override
     public ResponseEntity<?> deleteVacationById(Long id) {
         Vacation vacation = vacationRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("vacation not exists with id : " + id));
-        vacationRepo.deleteById(id);
-
+        if (vacation != null){
+            vacationRepo.deleteById(id);
+        }
         return new ResponseEntity<>("delete Successfully", HttpStatus.OK);
     }
 
