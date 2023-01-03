@@ -1,17 +1,21 @@
 package com.arunava.model;
 
-import lombok.Data;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.Date;
 
-@Entity
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
 @Data
+@Entity
 public class Vacation {
 
-    @javax.persistence.Id
+    @jakarta.persistence.Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long Id;
 
