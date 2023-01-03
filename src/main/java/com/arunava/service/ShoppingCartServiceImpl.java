@@ -3,8 +3,6 @@ package com.arunava.service;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +13,8 @@ import com.arunava.model.Vacation;
 import com.arunava.repository.CartItemRepository;
 import com.arunava.repository.UserRepository;
 import com.arunava.repository.VacationRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartService {

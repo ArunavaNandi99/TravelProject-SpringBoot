@@ -3,8 +3,6 @@ package com.arunava.controller;
 
 import java.util.Map;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.arunava.model.Vacation;
 import com.arunava.service.VacationService;
+
+import jakarta.validation.Valid;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController

@@ -2,9 +2,6 @@ package com.arunava.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.arunava.dto.LoginDto;
 import com.arunava.model.User;
 import com.arunava.service.UserService;
+
+import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")

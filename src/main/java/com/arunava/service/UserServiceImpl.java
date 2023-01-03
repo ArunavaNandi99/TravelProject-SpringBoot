@@ -3,8 +3,6 @@ package com.arunava.service;
 import java.util.List;
 import java.util.Optional;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +16,8 @@ import org.springframework.stereotype.Service;
 import com.arunava.dto.LoginDto;
 import com.arunava.model.User;
 import com.arunava.repository.UserRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Service
 public class UserServiceImpl implements UserService {

@@ -3,9 +3,9 @@ package com.arunava.service;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import com.arunava.model.CartItem;
+
+import jakarta.servlet.http.HttpSession;
 
 public interface ShoppingCartService {
 
