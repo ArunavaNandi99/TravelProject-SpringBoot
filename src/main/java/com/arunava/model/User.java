@@ -23,7 +23,7 @@ public class User {
     @NotBlank(message = "please enter email")
     @Email(message = "please enter valid email example:'demo.example.com'")
     private String email;
-    @Size(max = 7 , message = "password should not be 7 character")
+    @Size(min = 5 , message = "password should not be 7 character")
     @NotBlank(message = "please enter password")
     private String password;
 }

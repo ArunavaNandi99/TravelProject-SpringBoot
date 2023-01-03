@@ -1,14 +1,15 @@
 package com.arunava.security;
 
-import com.arunava.model.User;
-import com.arunava.repository.UserRepository;
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
+import com.arunava.model.User;
+import com.arunava.repository.UserRepository;
 
 @Component
 public class CustomUserDetailsService implements UserDetailsService {

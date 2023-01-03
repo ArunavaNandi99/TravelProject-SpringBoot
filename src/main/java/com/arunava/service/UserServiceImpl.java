@@ -66,13 +66,13 @@ public class UserServiceImpl implements UserService {
 			if (findByEmail.isPresent()) {
 				throw new Exception("user exists");
 			}else {
-				 userRepository.save(ud);			 
+				 userRepository.save(ud);
 			}
-		
+
 		}
 		return new ResponseEntity<>(user,HttpStatus.CREATED);
 
- 		
+
 	}
 
 }

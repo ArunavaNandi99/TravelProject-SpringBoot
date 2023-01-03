@@ -1,9 +1,10 @@
 package com.arunava.service;
 
-import com.arunava.model.Vacation;
+import java.util.Map;
+
 import org.springframework.http.ResponseEntity;
 
-import java.util.Map;
+import com.arunava.model.Vacation;
 
 public interface VacationService {
     ResponseEntity<?> saveVacation(Vacation vacation);
