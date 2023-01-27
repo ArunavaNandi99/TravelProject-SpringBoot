@@ -19,30 +19,30 @@ public class SecurityConfig {
 
     @Autowired
     private CustomAuthenticationProvider userAuthenticationProvider;
-    
+
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    	http
-    	.csrf().disable()
-    	.authorizeHttpRequests()
-    	.requestMatchers("/login","/register").permitAll()
-    	.anyRequest().authenticated()
-    	.and()
-    	.httpBasic();
-    	return http.build();
+    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf().disable()
+                .authorizeHttpRequests()
+                .requestMatchers("/login", "/register").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .httpBasic();
+        return http.build();
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
-    public AuthenticationManager authenticationManagerBean(HttpSecurity http) throws Exception {
-        
-    	AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
+    AuthenticationManager authenticationManagerBean(HttpSecurity http) throws Exception {
+
+        AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder.authenticationProvider(userAuthenticationProvider);
-        
+
         return authenticationManagerBuilder.build();
     }
 

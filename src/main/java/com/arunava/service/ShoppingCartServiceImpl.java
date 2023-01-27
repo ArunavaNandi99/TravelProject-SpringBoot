@@ -36,7 +36,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 	//static
 	@Override
 	public CartItem addToCart(Long uid, Long vid) {
-		User user = userRepo.findById(uid).orElseThrow(()-> new UserNotFoundException("userNot found :" +uid));
+//		User user = userRepo.findById(uid).orElseThrow(()-> new UserNotFoundException("userNot found :" +uid));
 		Vacation vacation = vacationRepo.findById(vid).orElseThrow(()->new UserNotFoundException("vacation not found :" +vid));
 
 		CartItem cartItem = new CartItem();
